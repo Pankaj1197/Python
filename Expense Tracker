@@ -1,0 +1,22 @@
+Explist = {'Food': 0.0, 'Cloths': 0.0, 'Transport': 0.0, 'Rent': 0.0, 'Miscelleneous': 0.0}     # initialize expense list with few default expenses 
+temp = 1
+expcount = int(input("No of expenses: "))       # enter no of expenses to add
+
+while temp <= expcount:                          # while loop to add expenses
+    Category = input("Enter the category: ")     # category input
+    Amount = int(input("Enter the Amount: "))    # amount
+    
+    if Category in Explist.keys():
+        Explist[Category] += Amount              # if input expense already exists then modify its value
+    else:
+        Explist[Category] = Amount                # or add a new expense
+    
+    temp +=1
+    
+    
+for key in Explist:                               # print all expense values
+        print(key, '=>', Explist[key])
+
+values = Explist.values()
+total = sum(values)
+print("Total Expense is equal to ", total)          # total expenses
