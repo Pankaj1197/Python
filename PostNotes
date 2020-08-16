@@ -1,0 +1,20 @@
+chores = {}
+
+temp = 0
+      
+while temp <= 1:    
+    Action = int(input("Action Required, Type 1 to add or 0 to remove, -1 to finish the list: "))
+    print("Action = ", Action)
+    if Action == 1:
+        chore = input("name of chore to add: ") 
+        details = input("details of chore: ") 
+        chores[chore] = details
+    elif Action == 0:
+        chore = input("name of chore to remove: ") 
+        del(chores[chore])
+    elif Action == -1:
+        temp = 5
+    else:
+        print ("wrong action input : no change in chore list\n")
+    for key in chores:
+        print(key, '=>', chores[key])
